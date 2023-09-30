@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (username === validusername && password === validpassword) {
             desktopMessage.textContent = "Inicio de sesión exitoso";
-            window.location.href = "https://nextcloudpublic.duckdns.org/nextcloud/index.php/";
+            window.location.href = "";
         } else {
             desktopMessage.textContent = "Credenciales incorrectas";
         }
