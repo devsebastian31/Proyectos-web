@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programador, hacker ético, analista de malware. Artículos sobre ciberseguridad y hacking ético.">
+    <meta name="keywords" content="ciberseguridad, hacking ético, análisis de malware, SQLMap, Bettercap, pentesting">
+    <meta name="author" content="bl4ck44">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- Meta para redes sociales -->
+    <meta property="og:title" content="bl4ck44 | Ciberseguridad">
+    <meta property="og:description" content="Explora temas sobre hacking ético, ciberseguridad y análisis de malware.">
+    <meta property="og:image" content="URL_de_tu_imagen">
+    <meta property="og:url" content="https://bl4ck44.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="shorcut icon" href="../Icono.ico">
+    <link rel="stylesheet" href="../estilo.css">
+    <script src="../script.js"></script>
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>bl4ck44 | Ciberseguridad</title>
+</head>
+<body>
+    <nav class="nav">
+		<ul class="nav__ul">
+			<li class="nav__li"><i class="fas fa-home"></i><a href="../index.html">Home</a></li>
+			<li class="nav__li"><i class="fa fa-list"></i><a href="../categories.html">Categories</a></li>
+		</ul>
+		<ul class="nav__responsive-ul">
+			<div class="nav__responsive-buttom-container">
+				<button class="nav__responsive-buttom" onclick="toggleMenu()">☰</button>
+			</div>
+          <div class="nav__li-container">
+          	<li class="nav__responsive_li"><i class="fas fa-home"></i><a href="../index.html">Home</a></li>
+			<li class="nav__responsive_li"><i class="fa fa-list"></i><a href="../categories.html">Categories</a></li>
+          </div>
+		</ul>
+	</nav>
+    <div class="Perfil">
+        <div class="Foto">
+            <img src="../bl4ck44.jpg" alt="bl4ck44">
+        </div>
+        <div class="bl4ck44">
+            <h2>bl4ck44</h2>
+            <p>Programmer / Ethical Hacker / Reverse Engineering / Software Analyst / Malware Analyst.</p>
+        </div>
+        <div class="Social">
+            <a href="https://github.com/bl4ck44" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+            <a href="https://www.instagram.com/devsebastian31/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://x.com/devsebastian31" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+            <a href="https://app.hackthebox.com/profile/641680" target="_blank"><i class="fa-solid fa-cube"></i>Hack The Box</a>
+        </div>
+        <div class="Social-movile">
+            <button class="Follow" onclick="toggleRedes()">Follow</button>
+            <div class="Redes" id="redes">
+                <a href="https://github.com/bl4ck44" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+                <a href="https://www.instagram.com/devsebastian31/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="https://x.com/devsebastian31" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="https://app.hackthebox.com/profile/641680" target="_blank"><i class="fa-solid fa-cube"></i>Hack The Box</a>
+            </div>
+        </div>
+    </div>
+    <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search-bar" class="search-bar" placeholder="Search">
+        <ul id="suggestions" class="suggestions-list"></ul>
+    </div>
+    <div class="Articulo">
+        <h1>Análisis con Bettercap</h1>
+        <img src="https://github.com/bl4ck44/Articulos/raw/master/Redes/Bettercap/Img/logo.jpg" height="300px" width="500px">
+        <h2>Que es y para que sirve bettercap?</h2>
+        <p>Bettercap es una herramienta avanzada de seguridad y pruebas de penetración que se utiliza principalmente para realizar ataques en redes, análisis de tráfico, y manipulación de datos en tiempo real. Es una herramienta versátil diseñada para realizar tareas de man-in-the-middle (MitM), es decir, interceptar, modificar, y redirigir tráfico en una red.</p>
+            <h2>Instalación</h2>
+            <pre><code class="language-bash">sudo apt-get install bettercap</code></pre>
+            <h2>USO</h2>
+            <p>Para hacer un ataque MITM tendremos que hacer un ataque <b>DNS Spoofing</b> a nuestra máquina windows.
+
+                Ahora usaremos con siguiente comandos</p><br>
+            <img src="https://flashstart.com/wp-content/uploads/2023/03/DNS-spoofing-768x435-1.jpg" height="250px" width="450px">
+            <pre><code class="language-bash">bettercap
+
+net.probe on
+
+ticker on
+</code></pre>
+            <p>
+                Como podmeos observar son las IP de nuestra red local.
+            </p>
+            <img src="https://github.com/bl4ck44/Articulos/raw/master/Redes/Bettercap/Img/IP.jpg" height="150px" width="550px" id="arp">
+            <p>En la misma terminal ejecutaremos de nuevo bettercap, seleccionamos la IP que vamos analizár en este caso vamos a nalizar todas las IP para esto seleccionamos la IP del router.</p>
+            <pre><code class="language-bash">set arp.spoof.targets 192.168.1.1
+                
+arp.spoof on
+                
+set net.sniff.verbose false
+                
+net.sniff on</code></pre>
+<p>Y nos mostrara todo el tráfico de todos los dispositivos.</p>
+    </div>
+</body>
+</html>

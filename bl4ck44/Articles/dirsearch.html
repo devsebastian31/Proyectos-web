@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programador, hacker ético, analista de malware. Artículos sobre ciberseguridad y hacking ético.">
+    <meta name="keywords" content="ciberseguridad, hacking ético, análisis de malware, SQLMap, Bettercap, pentesting">
+    <meta name="author" content="bl4ck44">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- Meta para redes sociales -->
+    <meta property="og:title" content="bl4ck44 | Ciberseguridad">
+    <meta property="og:description" content="Explora temas sobre hacking ético, ciberseguridad y análisis de malware.">
+    <meta property="og:image" content="URL_de_tu_imagen">
+    <meta property="og:url" content="https://bl4ck44.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="shorcut icon" href="../Icono.ico">
+    <link rel="stylesheet" href="../estilo.css">
+    <script src="../script.js"></script>
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>bl4ck44 | Ciberseguridad</title>
+</head>
+<body>
+    <nav class="nav">
+		<ul class="nav__ul">
+			<li class="nav__li"><i class="fas fa-home"></i><a href="../index.html">Home</a></li>
+			<li class="nav__li"><i class="fa fa-list"></i><a href="../categories.html">Categories</a></li>
+		</ul>
+		<ul class="nav__responsive-ul">
+			<div class="nav__responsive-buttom-container">
+				<button class="nav__responsive-buttom" onclick="toggleMenu()">☰</button>
+			</div>
+          <div class="nav__li-container">
+          	<li class="nav__responsive_li"><i class="fas fa-home"></i><a href="../index.html">Home</a></li>
+			<li class="nav__responsive_li"><i class="fa fa-list"></i><a href="../categories.html">Categories</a></li>
+          </div>
+		</ul>
+	</nav>
+    <div class="Perfil">
+        <div class="Foto">
+            <img src="../bl4ck44.jpg" alt="bl4ck44">
+        </div>
+        <div class="bl4ck44">
+            <h2>bl4ck44</h2>
+            <p>Programmer / Ethical Hacker / Reverse Engineering / Software Analyst / Malware Analyst.</p>
+        </div>
+        <div class="Social">
+            <a href="https://github.com/bl4ck44" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+            <a href="https://www.instagram.com/devsebastian31/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://x.com/devsebastian31" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+            <a href="https://app.hackthebox.com/profile/641680" target="_blank"><i class="fa-solid fa-cube"></i>Hack The Box</a>
+        </div>
+        <div class="Social-movile">
+            <button class="Follow" onclick="toggleRedes()">Follow</button>
+            <div class="Redes" id="redes">
+                <a href="https://github.com/bl4ck44" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+                <a href="https://www.instagram.com/devsebastian31/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="https://x.com/devsebastian31" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="https://app.hackthebox.com/profile/641680" target="_blank"><i class="fa-solid fa-cube"></i>Hack The Box</a>
+            </div>
+        </div>
+    </div>
+    <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search-bar" class="search-bar" placeholder="Search">
+        <ul id="suggestions" class="suggestions-list"></ul>
+    </div>
+    <div class="Articulo">
+        <h1>Análisis con dirsearch</h1>
+        <img src="https://www.kali.org/tools/dirsearch/images/dirsearch-logo.svg" height="300px" width="500px">
+        <h2>Que es y para que sirve dirsearch?</h2>
+        <p>Dirsearch es una herramienta de código abierto para la enumeración de directorios web mediante ataques de fuerza bruta. Está escrita en Python y se utiliza principalmente para encontrar directorios y archivos ocultos en sitios web o aplicaciones web que no están enlazados directamente o que no son visibles desde la interfaz de usuario.</p>
+        <br><h3>Funcionalidades principales:</h3><br>
+        <li>Enumeración de directorios y archivos mediante diccionarios de palabras (wordlists).</li><br>
+        <li>Soporte para varios protocolos: HTTP, HTTPS, etc.</li><br>
+        <li>Compatibilidad con diferentes métodos HTTP (GET, POST, HEAD, etc.).</li><br>
+        <li>Soporte de conexiones a través de proxies.</li><br>
+        <li>Opciones de personalización de encabezados HTTP y cookies.</li><br>
+        <li>Capacidad de manejar errores de estado HTTP, redirecciones y respuestas.</li><br>
+        <li>Soporte de escaneo multihilo para mejorar la velocidad.</li>
+            <h2>Instalación</h2>
+            <pre><code class="language-bash">sudo apt-get install dirsearch</code></pre>
+            <h2>USO</h2>
+            <p>Para buscar directorios web usamos el siguiente comando:</p><br>
+            <pre><code class="language-bash">dirsearch -u [url]</code></pre>
+            <p>Ejemplo:</p>
+            <pre><code class="language-bash">dirsearch -u https://www.google.com/ -e txt,php,html -x 404</code></pre>
+<p><b>-u = URL Target / -e = Extensiones / -x = Estados excluidos</b></p><br>
+<img src="https://github.com/bl4ck44/Articulos/raw/master/OSINT/dirsearch/Img/Ejemplo.png" height="350px" width="550px">
+    </div>
+</body>
+</html>

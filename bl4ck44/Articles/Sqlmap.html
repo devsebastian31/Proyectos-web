@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programador, hacker ético, analista de malware. Artículos sobre ciberseguridad y hacking ético.">
+    <meta name="keywords" content="ciberseguridad, hacking ético, análisis de malware, SQLMap, Bettercap, pentesting">
+    <meta name="author" content="bl4ck44">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- Meta para redes sociales -->
+    <meta property="og:title" content="bl4ck44 | Ciberseguridad">
+    <meta property="og:description" content="Explora temas sobre hacking ético, ciberseguridad y análisis de malware.">
+    <meta property="og:image" content="URL_de_tu_imagen">
+    <meta property="og:url" content="https://bl4ck44.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="shorcut icon" href="../Icono.ico">
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>bl4ck44 | Ciberseguridad</title>
+</head>
+<body>
+    <nav class="nav">
+		<ul class="nav__ul">
+			<li class="nav__li"><i class="fas fa-home"></i><a href="../index.html">Home</a></li>
+			<li class="nav__li"><i class="fa fa-list"></i><a href="../categories.html">Categories</a></li>
+		</ul>
+		<ul class="nav__responsive-ul">
+			<div class="nav__responsive-buttom-container">
+				<button class="nav__responsive-buttom" onclick="toggleMenu()">☰</button>
+			</div>
+          <div class="nav__li-container">
+          	<li class="nav__responsive_li"><i class="fas fa-home"></i><a href="../index.html">Home</a></li>
+			<li class="nav__responsive_li"><i class="fa fa-list"></i><a href="../categories.html">Categories</a></li>
+          </div>
+		</ul>
+	</nav>
+    <div class="Perfil">
+        <div class="Foto">
+            <img src="../bl4ck44.jpg" alt="bl4ck44">
+        </div>
+        <div class="bl4ck44">
+            <h2>bl4ck44</h2>
+            <p>Programmer / Ethical Hacker / Reverse Engineering / Software Analyst / Malware Analyst.</p>
+        </div>
+        <div class="Social">
+            <a href="https://github.com/bl4ck44" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+            <a href="https://www.instagram.com/devsebastian31/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://x.com/devsebastian31" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+            <a href="https://app.hackthebox.com/profile/641680" target="_blank"><i class="fa-solid fa-cube"></i>Hack The Box</a>
+        </div>
+        <div class="Social-movile">
+            <button class="Follow" onclick="toggleRedes()">Follow</button>
+            <div class="Redes" id="redes">
+                <a href="https://github.com/bl4ck44" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+                <a href="https://www.instagram.com/devsebastian31/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="https://x.com/devsebastian31" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="https://app.hackthebox.com/profile/641680" target="_blank"><i class="fa-solid fa-cube"></i>Hack The Box</a>
+            </div>
+        </div>
+    </div>
+    <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search-bar" class="search-bar" placeholder="Search">
+        <ul id="suggestions" class="suggestions-list"></ul>
+    </div>
+    </div>
+    <div class="Articulo">
+        <h1>Inyección con Sqlmap</h1>
+        <img src="https://github.com/bl4ck44/Articulos/raw/master/Explotaci%C3%B3n/sqlmap/Img/Logo.png" height="300px" width="500px">
+        <h2>Que es y para que sirve Sqlmap?</h2>
+        <p>Sqlmap es una herramienta de prueba de penetración de código abierto utilizada para detectar y explotar vulnerabilidades de inyección de SQL en aplicaciones web. Fue desarrollada en Python y se utiliza para automatizar el proceso de detección y explotación de vulnerabilidades en bases de datos relacionales.
+
+            La inyección de SQL es una técnica común utilizada por los hackers para obtener acceso no autorizado a una base de datos o para extraer información sensible de un sistema. SQLMap ayuda a identificar y explotar estas vulnerabilidades al analizar la estructura de una aplicación web y realizar una serie de pruebas automatizadas para detectar cualquier punto de inyección de SQL.
+            
+            Algunas de las características de SQLMap incluyen la capacidad de enumerar bases de datos, tablas y columnas, extraer datos de la base de datos, obtener el sistema de gestión de bases de datos (SGBD) subyacente, ejecutar comandos en el sistema operativo subyacente, entre otras. También puede realizar ataques de fuerza bruta en credenciales de bases de datos y ejecutar scripts personalizados durante el proceso de prueba.</p>
+            <h2>Instalación</h2>
+            <pre><code class="language-bash">sudo apt-get install sqlmap</code></pre>
+            <h2>USO</h2>
+            <p>Enumerar todas las opciones y parámetros disponibles de SQLMap:</p>
+            <pre><code class="language-bash">sqlmap --help</code></pre>
+            <p>Detectar automáticamente la inyección de SQL en una URL específica:</p>
+            <pre><code class="language-bash">sqlmap -u URL </code></pre>
+            <p>Especificar un parámetro vulnerable en una URL:</p>
+            <pre><code class="language-bash">sqlmap -u URL --param=PARAMETER </code></pre>
+            <p>Probar diferentes tipos de inyección de SQL (booleano, tiempo, basado en errores, etc.):</p>
+            <pre><code class="language-bash">sqlmap -u URL --technique=TECHNIQUE </code></pre>
+            <p>Obtener información sobre la base de datos:</p>
+            <pre><code class="language-bash">sqlmap -u URL --dbs </code></pre>
+            <p>Enumerar todas las tablas de una base de datos:</p>
+            <pre><code class="language-bash">sqlmap -u URL -D DATABASE --tables </code></pre>
+            <p>Enumerar columnas de una tabla:</p>
+            <pre><code class="language-bash">sqlmap -u URL -D DATABASE -T TABLE --columns </code></pre>
+            <p>Extraer datos de una columna específica:</p>
+            <pre><code class="language-bash">sqlmap -u URL -D DATABASE -T TABLE -C COLUMN --dump </code></pre>
+            <p>Usar un archivo de carga útil personalizado:</p>
+            <pre><code class="language-bash">sqlmap -u URL --payload-file=FILE </code></pre>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>
